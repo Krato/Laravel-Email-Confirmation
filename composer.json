@@ -1,6 +1,6 @@
 {
     "name": "infinety-es/email-confirmation",
-    "keywords": [ "infinety",, "confirm email", "validate email", "confirmation email", "validation email", "laravel email", "laravel" ],
+    "keywords": [ "infinety", "confirm email", "validate email", "confirmation email", "validation email", "laravel email", "laravel" ],
     "homepage" : "https://gitlab.com/krato/email-confirmation",
     "description": "E-Mail confirmation when registering",
     "license": "MIT",
