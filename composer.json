@@ -1,0 +1,28 @@
+{
+    "name": "infinety-es/email-confirmation",
+    "keywords": [ "infinety",, "confirm email", "validate email", "confirmation email", "validation email", "laravel email", "laravel" ],
+    "homepage" : "https://gitlab.com/krato/email-confirmation",
+    "description": "E-Mail confirmation when registering",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Stanislav Kabin",
+            "email": "me@h-zone.ru"
+        },
+        {
+            "name": "Eric Lagarda",
+            "email": "dev@ericlagarda.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "Infinety\\EmailConfirmation\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Infinety\\EmailConfirmation\\": "src/"
+        }
+    }
+}
