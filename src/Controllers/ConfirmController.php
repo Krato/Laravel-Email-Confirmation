@@ -18,15 +18,16 @@ class ConfirmController extends Controller
     public function postConfirm($hash)
     {
         if (auth()->check() && auth()->user()->confirm->is_confirmed === true) {
-            session()->flash('activated');
+            session()->flash('confirm_mail', 'activated');
 
             return redirect('/');
         }
-
+        
         $confirm = Confirm::where('hash', $hash)->first();
 
+
         if (!$confirm) {
-            session()->flash('hash-not-found');
+            session()->flash('confirm_mail', 'not_found');
 
             return redirect('/');
         }
@@ -34,11 +35,10 @@ class ConfirmController extends Controller
         $user = $confirm->user;
 
         if (!$user) {
-            session()->flash('user-not-found');
+            session()->flash('confirm_mail', 'user-not-found');
 
             return redirect('/');
         } else {
-
             $confirm = $user->confirm;
             if (!empty($confirm) && $confirm->hash == $hash) {
                 $confirm->is_confirmed = true;
@@ -51,7 +51,6 @@ class ConfirmController extends Controller
             } else {
                 return redirect()->back()->withErrors([trans('email-confirmation.view.confirm.not-found')]);
             }
-
         }
 
         return redirect()->back()->withErrors([trans('email-confirmation.view.confirm.something-wrong')]);
@@ -88,7 +87,7 @@ class ConfirmController extends Controller
     public function getConfirm($hash)
     {
         if (auth()->check() && auth()->user()->confirm->is_confirmed === true) {
-            session()->flash('activated');
+            session()->flash('confirm_mail', 'activated');
 
             return redirect('/');
         } else {
